@@ -14,7 +14,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/succefull2023/maven-test.git'
             }
         }
-        stage(Sonarqube scan) {
+        stage('Sonarqube scan') {
           steps{
           witSonarQubeEnv('sonar') {
         sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=succefull2023_geolocation1' 
